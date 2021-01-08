@@ -1,0 +1,29 @@
+import java.util.Scanner;
+public class Code_18 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("请输入10个double型的值：");
+		int i,j;
+		int len=10;
+		double [] numbers=new double[10];
+		for(i=0;i<len;i++)
+			numbers[i]=input.nextDouble();
+		
+		for(i=1;i<len;i++) 
+		{
+			for(j=1;j<len;j++) {
+				if(numbers[j]>numbers[j-1])
+				{
+					double number=numbers[j-1];
+					numbers[j-1]=numbers[j];
+					numbers[j]=number;
+				}
+			}
+		}
+		System.out.print("输出排序后的数字：");
+		for(i=0;i<len;i++)
+			System.out.print(numbers[i]+" ");
+	}
+
+}
