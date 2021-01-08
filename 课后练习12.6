@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Code_6 {
+	public static void main(String[] args) {
+		/*创建Scanner对象*/
+		Scanner input=new Scanner(System.in);
+		//输入一个十六进制数
+		System.out.print("Enter a hex nummber: ");
+		String hex=input.nextLine();
+		if(hexToDec(hex)) {
+			System.out.println("The decimal value for hex number "+hex+" is "+hexToDecimal(hex.toUpperCase()));
+		}
+		else
+			System.out.println("The number is not a hexadecimal number");
+	}
+	//判断输入的数是否是十六进制数
+	public static boolean hexToDec(String hexString) {
+		boolean flag=true;
+		try {
+		    int result=Integer.parseInt(hexString,16);
+		}
+		catch(NumberFormatException ex) {
+			flag=false;
+		}
+		
+		return flag;
+	}
+	//十六进制数转换为十进制数
+	public static int hexToDecimal(String hex) {
+		int decimalValue=0;
+		for (int i=0;i<hex.length();i++) {
+			char hexChar=hex.charAt(i);
+			decimalValue=decimalValue*16+hexCharToDecimal(hexChar);
+		}
+		return decimalValue;
+	}
+	
+	public static int hexCharToDecimal(char ch) {
+		if(ch>='A' && ch<='F') 
+			return 10+ch-'A';
+		else if (ch >= '0' && ch <= '9')
+			return ch-'0';
+	}
+
+}
