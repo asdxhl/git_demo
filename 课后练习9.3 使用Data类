@@ -1,0 +1,14 @@
+import java.util.Date;
+public class Data {
+
+	public static void main(String[] args) {
+		long t=10000;
+		for(int i=0;i<8;i++) {
+			Date date=new Date(t);
+			System.out.println("时间间隔为"+t+"时："+date.toString());
+			t*=10;
+		}
+		
+	}
+
+}
