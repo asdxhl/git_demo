@@ -1,5 +1,5 @@
 import java.util.Scanner;
-public class 计算数字的出现次数 {
+public class number {
 	public static void main(String[] args) {
 		int [] numbers=new int[100];
 		int i;
