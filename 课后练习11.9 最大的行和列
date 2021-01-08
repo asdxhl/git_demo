@@ -1,0 +1,62 @@
+import java.util.Scanner;
+public class 最大的行和列 {
+	public static void main(String[] args) {
+		int row,column,n;
+		System.out.print("Enter the array size n:");
+		Scanner input = new Scanner(System.in);
+		n=input.nextInt();
+		int[][] array=new int[n][n];
+		int[] arrayList1=new int[n];
+		int[] arrayList2=new int[n];
+		for(row=0;row<n;row++) {
+			for(column=0;column<n;column++)
+			{
+				int i=(int) (Math.random()*1000);
+				if(i>500)
+					array[row][column]=1;
+				else
+					array[row][column]=0;
+						
+			}
+		}
+		
+		System.out.println("The random array is");
+		for(row=0;row<n;row++) {
+			for(column=0;column<n;column++)
+				System.out.print(array[row][column]);
+			System.out.println();
+		}
+		
+		for(row=0;row<n;row++) {
+			for(column=0;column<n;column++) {
+				if(array[row][column]==1)
+			    {
+					arrayList1[row]++;
+					arrayList2[column]++;
+			    }
+			}			
+		}
+		int maxRow=arrayList1[0],maxColumn=arrayList2[0];
+		for(int i=1;i<n;i++)
+		{
+			if(maxRow<arrayList1[i])
+			{
+				maxRow=arrayList1[i];
+			}
+			if(maxColumn<arrayList2[i])
+				maxColumn=arrayList2[i];
+		}
+		System.out.print("The largest row index:");
+		for(int i=1;i<n;i++) {
+			if(maxRow==arrayList1[i])
+				System.out.print(i+" ");
+		}
+		System.out.println();
+		System.out.print("The largest column index:");
+		for(int i=1;i<n;i++) {
+			if(maxColumn==arrayList2[i])
+				System.out.print(i+" ");
+		}
+	}
+
+}
