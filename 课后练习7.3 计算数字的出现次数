@@ -1,0 +1,30 @@
+import java.util.Scanner;
+public class 计算数字的出现次数 {
+	public static void main(String[] args) {
+		int [] numbers=new int[100];
+		int i;
+		for(i=0;i<100;i++) {
+			numbers[i]=0;
+		}
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the integers between 1 and 100:");
+		int t;
+		t =input.nextInt();
+		while(t!=0)
+		{
+			numbers[t-1]++;
+			t =input.nextInt();
+		}
+		for(i = 0; i < 100; i++) {
+			if(numbers[i]!=0) {
+				System.out.print(i+1);
+				if(numbers[i]>1) 
+				     System.out.println(" occurs "+numbers[i]+" times");
+				else
+					System.out.println(" occurs "+numbers[i]+" time");
+			}
+		}
+
+	}
+
+}
