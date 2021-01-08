@@ -1,0 +1,13 @@
+public class Random {
+
+	public static void main(String[] args) {
+		java.util.Random number = new java.util.Random(1000);
+		System.out.print("产生0-100之间前50个随机数： ");
+		for(int i=0;i<50;i++)
+		{
+			System.out.print(number.nextInt(100)+" ");
+		}
+
+	}
+
+}
