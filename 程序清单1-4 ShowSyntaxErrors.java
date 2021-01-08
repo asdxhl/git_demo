@@ -1,4 +1,3 @@
-package demo;
 public class ShowSyntaxErrors {
 
 	public static  main(String[] args) {
