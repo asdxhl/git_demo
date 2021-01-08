@@ -1,0 +1,44 @@
+import java.util.Scanner;
+public class Code_5 {
+
+	public static void main(String[] args) {
+		int [] numbers=new int[10];
+		int i,j;
+		int flag=0;
+		int index=1;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter 10 numbers:");
+		int t;
+		for(i=0;i<10;i++)
+		{
+			t=input.nextInt();
+			if(i==0)
+				numbers[i]=t;
+			else
+			{
+				for(j=0;j<i;j++)
+				{
+					if(numbers[j]!=t)
+						flag++;
+				}
+				if(flag==i) 
+				{
+					numbers[index]=t;
+					index++;
+				}
+			}
+			flag=0;
+		}
+		
+		System.out.println("The number of distinct numbers is "+index);
+		System.out.print("The distinct numbers are:");
+		for(i=0;i<index;i++)
+		{
+			if(i<index-1)
+				System.out.print(" "+numbers[i]);
+			else
+				System.out.println(" "+numbers[i]);
+		}
+	}
+
+}
