@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class Code_34 {
+
+	public static void main(String[] args) {
+		System.out.print("Enter a string:");
+		Scanner input=new Scanner(System.in);
+		String s=input.nextLine();
+		System.out.print("The sorted string is :"+sort(s));
+
+	}
+	public static String sort(String s)
+	{
+		char[] ch=s.toCharArray();
+		java.util.Arrays.sort(ch);
+        String result = String.valueOf(ch);
+        return result;
+	}
+
+}
