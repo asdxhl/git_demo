@@ -1,0 +1,19 @@
+import java.util.GregorianCalendar;
+public class 使用GregorianCalendar类 {
+
+	public static void main(String[] args) {
+		//创建calendar对象
+				GregorianCalendar calendar=new GregorianCalendar();
+				//获取并显示当前日期
+				System.out.println(calendar.get(calendar.YEAR)+":"+(calendar.get(calendar.MONTH)+1)
+				     +":"+ calendar.get(calendar.DAY_OF_MONTH));
+				//设置时间流逝值
+				calendar.setTimeInMillis(1234567898765L);
+				
+				//从1970.01.01起经流逝值后的日期
+				System.out.println(calendar.get(calendar.YEAR)+":"+calendar.get(calendar.MONTH)
+			     +":"+ calendar.get(calendar.DAY_OF_MONTH));
+
+	}
+
+}
