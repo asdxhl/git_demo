@@ -1,0 +1,60 @@
+import java.util.Scanner;
+public class Code_31 {
+
+	public static void main(String[] args) {
+		int i;
+		int length1,length2;
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter list1 size and contents: ");
+		length1=input.nextInt();
+		int[] list1=new int[length1];
+		for(i=0;i<length1;i++)
+			list1[i]=input.nextInt();
+		
+		System.out.print("Enter list2 size and contents: ");
+		length2=input.nextInt();
+		int[] list2=new int[length2];
+		for(i=0;i<length2;i++)
+			list2[i]=input.nextInt();
+		System.out.print("list1 is: ");
+		for(i=0;i<length1;i++)
+			System.out.print(list1[i]+" ");
+		System.out.println("");
+		System.out.print("list2 is: ");
+		for(i=0;i<length2;i++)
+			System.out.print(list2[i]+" ");
+		System.out.println("");
+		System.out.print("The merged list is ");
+		for(i=0;i<merge(list1, list2).length;i++)
+			System.out.print(merge(list1, list2)[i]+" ");
+		
+	}
+	public static int[] merge(int[] list1 , int[] list2) {
+		int[] list3=new int[list1.length+list2.length];
+		int i;
+		for(i=0;i<list1.length;i++)
+			list3[i]=list1[i];
+		for(i=0;i<list2.length;i++)
+			list3[i+list1.length]=list2[i];
+		for (i=0;i<list3.length-1;i++)
+		{
+			int min=list3[i];
+			int minIndex=i;
+			
+			for (int j=i+1;j<list3.length;j++)
+			{
+				if(min>list3[j])
+				{
+					min=list3[j];
+					minIndex=j;
+				}
+			}
+			if(minIndex!=i)
+			{
+				list3[minIndex]=list3[i];
+				list3[i]=min;
+			}
+		}
+		return list3;
+	}
+}
