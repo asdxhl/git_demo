@@ -1,0 +1,29 @@
+import java.util.Random;
+public class pick {
+
+	public static void main(String[] args) {
+		Random random = new Random();
+		int size=random.nextInt(13)+1;
+		int colour=random.nextInt(4)+1;
+		if(size>=2&&size<=10) {
+			System.out.print("The card you picked is "+size+" ");
+		}
+		else if(size==1)
+			System.out.print("The card you picked is Ace ");
+		else if(size==11)
+			System.out.print("The card you picked is Jack ");
+		else if(size==12)
+			System.out.print("The card you picked is Queen ");
+		else if(size==13)
+			System.out.print("The card you picked is King ");
+		
+		
+		
+		switch(colour) {
+		case 1: System.out.println("of Clubs");//黑梅花
+		case 2: System.out.println("of Diamonds");//红方块
+		case 3: System.out.println("of Hearts");//红心
+		case 4: System.out.println("of Spades");//黑桃
+		}
+	}
+}
