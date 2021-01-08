@@ -1,0 +1,37 @@
+import java.util.Scanner;
+public class Code_19 {
+
+	public static void main(String[] args) {
+		Scanner input = new Scanner(System.in);
+		System.out.print("Enter the size of the list：");
+		int n=input.nextInt();
+		System.out.print("Enter the contents of the list:");
+		int[] numbers=new int[n];
+		int i,index=0;
+		for(i=0;i<n;i++)
+			numbers[i]=input.nextInt();
+		System.out.print("The list has "+n+" integers");
+		for(i=0;i<n;i++)
+			System.out.print(" "+numbers[i]);
+		System.out.println();
+		if(isSorted(numbers))
+			System.out.println("The list is already sorted");
+		else
+			System.out.print("The list is not sorted");
+	}
+	public static boolean isSorted(int[] list)
+	{
+		int index=0;
+		for(int i=1;i<list.length;i++)
+		{
+			if(list[i]>=list[i-1])
+				index++;
+		}
+		if(index==list.length-1)
+			return true;
+		else
+			return false;
+		
+	}
+
+}
