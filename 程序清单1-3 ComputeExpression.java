@@ -1,5 +1,3 @@
-package demo;
-
 public class ComputeExpression {
 
 	public static void main(String[] args) {
