@@ -1,0 +1,36 @@
+import java.util.Scanner;
+public class Whatdayistoday {
+ public static void main(String[] args) {
+  // TODO Auto-generated method stub
+  //创建Scanner对象
+  Scanner input = new Scanner(System.in);
+  //输入年份
+  System.out.print("Enter year: (e.g.,2012):");
+  int year = input.nextInt();
+  //输入月份
+  System.out.print("Enter month: 1-12:");
+  int month = input.nextInt();
+  //输入某月的第几天
+  System.out.print("Enter the day of the month: 1-31:");
+  int day = input.nextInt();
+  int q=day;
+  if(month==1||month==2)
+  {
+   month=month+12;
+   year=year-1;
+  }
+  int m=month;
+  int j=(int)(year/100);
+  int k=year%100;
+  int h=(int)(q+(int)((26*(m+1))/10)+k+(int)(k/4)+(int)(j/4)+5*j)%7;
+  switch(h) {
+  case 0:System.out.println("Day of the week is Saturday"); break;
+  case 1:System.out.println("Day of the week is Sunday"); break;
+  case 2:System.out.println("Day of the week is Monday"); break;
+  case 3:System.out.println("Day of the week is Tuesday"); break;
+  case 4:System.out.println("Day of the week is Wednesday"); break;
+  case 5:System.out.println("Day of the week is Tursday"); break;
+  case 6:System.out.println("Day of the week is Friday"); break;
+  }
+ }
+}
