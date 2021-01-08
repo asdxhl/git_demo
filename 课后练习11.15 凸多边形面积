@@ -1,0 +1,36 @@
+import java.util.Scanner;;
+public class 凸多边形面积 {
+
+	public static void main(String[] args) {
+		Scanner input=new Scanner(System.in);
+		//输入凸多边形的顶点数n（即边数）
+		System.out.print("Enter the number of points: ");
+		int n= input.nextInt();
+		int i,j;
+		double area=0;
+		double a,b,c,p;
+		double[] arrayX=new double[n];
+		double[] arrayY=new double[n];
+		int x=0,y=0;
+		
+		//将x,y的坐标分别存入两个数组中
+		System.out.print("Enter the coordinates of the points:");
+		for(i=0;i<n;i++) {
+			arrayX[i]=input.nextDouble();
+			arrayY[i]=input.nextDouble();
+		}
+		
+		//将n边形分为(n-2)个三角形来计算
+		for(i=1;i<=n-2;i++) {
+			a=Math.sqrt(Math.pow(arrayX[i]-arrayX[0], 2)+Math.pow(arrayY[i]-arrayY[0],2));
+			b=Math.sqrt(Math.pow(arrayX[i+1]-arrayX[i], 2)+Math.pow(arrayY[i+1]-arrayY[i],2));
+			c=Math.sqrt(Math.pow(arrayX[i+1]-arrayX[0], 2)+Math.pow(arrayY[i+1]-arrayY[0],2));
+			p=(a+b+c)/2;
+			area+=Math.sqrt(p*(p-a)*(p-b)*(p-c));
+		}
+		
+		System.out.println("The total area is "+area);
+		
+	}
+
+}
