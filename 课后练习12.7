@@ -1,0 +1,36 @@
+
+import java.util.Scanner;
+import java.lang.Integer;
+public class Code_7 {
+	public static void main(String[] args) {
+		/*创建Scanner对象*/
+		Scanner input=new Scanner(System.in);
+		/*输入一个二进制数*/
+		System.out.print("Enter a binary nummber: ");
+		String bin=input.nextLine();
+		
+		if(bin2Dec(bin)) {
+			System.out.println("The decimal value for binary number "+bin+" is "+binToDecimal(bin.toUpperCase()));
+		}
+		else
+			System.out.println("The number is not a binary number");
+	}
+	/*判断是否是二进制数*/
+	public static boolean bin2Dec(String binaryString) {
+		boolean flag=true;
+		try {
+		    int result=Integer.parseInt(binaryString,2);
+		}
+		catch(NumberFormatException ex) {
+			flag=false;
+		}
+		
+		return flag;
+	}
+	//二进制数转换为十进制数
+	public static String binToDecimal(String bin) {
+		String decimalValue;
+		decimalValue=Integer.valueOf(bin,2).toString();
+		return decimalValue;
+	}
+}
