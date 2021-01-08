@@ -1,0 +1,19 @@
+import java.util.Scanner;
+public class abc {
+
+	public static void main(String[] args) {
+		// TODO Auto-generated method stub
+		Scanner input = new Scanner(System.in);
+		System.out.print("输入三角形的三条边：");
+		double a = input.nextDouble();
+		double b = input.nextDouble();
+		double c = input.nextDouble();
+		double total=a+b+c;
+		if((a+b>c)&&(a+c>b)&&(b+c>a))
+			System.out.println("该三角形的周长为："+total);
+		else
+			System.out.println("输入值不合法");
+
+	}
+
+}
