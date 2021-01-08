@@ -1,0 +1,20 @@
+import java.util.Scanner;
+public class rectangle {
+ public static void main(String[] args) {
+  //创建Scanner对象
+  Scanner input=new Scanner(System.in);
+  //输入矩形中心点坐标、长度、宽度
+  System.out.print("Enter r1's center x-,y-coordinates,width,and height:");
+  double x1 = input.nextDouble();
+  double y1 = input.nextDouble();
+  double w1 = input.nextDouble();
+  double h1 = input.nextDouble();
+  
+  System.out.print("Enter r2's center x-,y-coordinates,width,and height:");
+  double x2 = input.nextDouble();
+  double y2 = input.nextDouble();
+  double w2 = input.nextDouble();
+  double h2 = input.nextDouble();
+ 
+ }
+}
