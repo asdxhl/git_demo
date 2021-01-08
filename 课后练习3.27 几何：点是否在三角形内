@@ -1,0 +1,16 @@
+import java.util.Scanner;
+public class point {
+ public static void main(String[] args) {
+  //创建Scanner对象
+  Scanner input=new Scanner(System.in);
+  //输入点坐标
+  System.out.print("Enter a point's x- and y-coordinates:");
+  double x = input.nextDouble();
+  double y = input.nextDouble();
+  double a=-x/2+100;
+  if((x>=0&&x<=200)&&(y>=0&&y<=a))
+   System.out.println("The point is in the trianfle");
+  else
+   System.out.println("The point is not in the trianfle");
+ }
+}
